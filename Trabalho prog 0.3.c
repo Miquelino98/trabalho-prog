@@ -47,11 +47,12 @@ void Informacoes(struct Personagem Personagem){
     //printf("Digite seu nome: ");
     //scanf("%s",personagem->nomejogador );
     printf("Digite o nome do seu personagem: ");
-    scanf("%s", Personagem.nome);
+    scanf("%s",&Personagem.nome);
     printf("Escreva a lore do seu personagem (150 caracteres): ");
-    scanf("%s", Personagem.lore);
+    scanf("%s",&Personagem.lore);
     printf("Digite a idade do seu personagem: ");
-    scanf("%d", Personagem.idade); 
+    scanf("%d",&Personagem.idade); 
+    return 0;
 }
 
 void SelecionarRaca(struct Raca)
@@ -91,7 +92,7 @@ void SelecionarRaca(struct Raca)
 void SelecionarClasse(struct Classe){
     int n;
     printf("Selecione sua Classe:\n1-Barbaro\n2-BArdo\n3-Bruxo\n4-Clerigo\n5-Druida\n6-Feiticeiro\n7-Guerreiro\n8-Ladino\n9-Mago\n10-Monge\n11-Paladino\n12-Patrulheiro");
-        scanf("%d",n);
+        scanf("%d",&n);
         /*switch (Classe)
         {
             
@@ -142,11 +143,11 @@ void MostrarFicha(struct Ficha jogador) {
 }
 
 void main() {   
-    printf("Bem-vindo ao DD!\n");                                                                                   //impressão de mensagem inicial;
+    printf("Bem-vindo ao D&D!\n");                                                                                   //impressão de mensagem inicial;
     struct Ficha jogador;                                                                                          //declaracao de variavel Ficha;
     int opcao; 
     do{                                                                                                     //declaracao de variavel que recebe a escolha do usuario;
-    printf("\n1 - Caracteristicas gerais\n2 - Classe\n3 - Raca\n4 - Descricao\n5 - Equipamentos\n");        //impressao de primeiro menu de escolha
+    printf("\n1 - Caracteristicas gerais\n2 - Raca\n3 - Classe\n4 - Descricao\n5 - Equipamentos\n0-Sair");        //impressao de primeiro menu de escolha
         scanf("%d", &opcao);
         switch(opcao){                                                                       //switch para a realizacao da escolha estilo menu;
             case 0:
@@ -161,7 +162,8 @@ void main() {
                 SelecionarRaca(jogador.Raca);                            //chamado da funcao Raca;                          
             case 4:
                 break;
-            case 5:              
+            case 5:   
+                break;           
             case 6:
                  MostrarFicha(jogador);
                 break;
